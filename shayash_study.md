@@ -62,6 +62,61 @@ First Basic Script...
 
 echo "Hey buddy"
 
+Ouptput:
+[cloud_user@888ed763a51c myscripts]$ ./01_basic.sh 
+Hey buddy
+
+What is Shebang?
+#!/bin/bash : Here we use to solve the capatability problem, this allow to use bash scripting use this if bash is not default one in that perticular os.
+Better to follow the standard.
+
+
+echo "Hey buddy" .... Here echo means ending output to the terminal. 
+
+
+How to run the script:
+*Make sure script has execute permission rwx
+
+*Run using:
+
+./script.sh
+/path/script.sh
+bash script.sh
+[cloud_user@888ed763a51c ~]$ pwd
+/home/cloud_user
+[cloud_user@888ed763a51c ~]$ /home/cloud_user/myscripts/01_basic.sh 
+Hey buddy
+
+For make the script in executable state: chmod +x file_name
+[cloud_user@888ed763a51c myscripts]$ ls -lhrt
+total 4.0K
+-rw-rw-r--. 1 cloud_user cloud_user 30 Jul 28 06:26 01_basic.sh
+[cloud_user@888ed763a51c myscripts]$ chmod +x 01_basic.sh 
+[cloud_user@888ed763a51c myscripts]$ ls -lhrt
+total 4.0K
+-rwxrwxr-x. 1 cloud_user cloud_user 30 Jul 28 06:26 01_basic.sh
+
+
+Comments:
+* Using #
+  #This is a comment.
+* Multi line comment:
+[cloud_user@888ed763a51c myscripts]$ cat 02_comments.sh 
+#!/bin/bash
+echo "checking comments"
+#This is a single line comment.
+<<comment
+this
+is
+multi
+line comments.
+comment
+[cloud_user@888ed763a51c myscripts]$ ./02_comments.sh 
+checking comments
+
+
+What are variable?
+To store a value and use it again and again whenever needed.
 
 
 
