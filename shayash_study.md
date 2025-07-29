@@ -2,6 +2,23 @@
 
 What is Lunux Shell?
 A shell provide an environment to a user to execute commands and interact with Kernal.
+Shell Script is a sequence of commands pasted in a text file.
+
+Why need to develop shell script?
+To automate repetitive task in our Unix/Linux Environment.
+
+Example of use case of shell scripting:
+* Send some devops tools versions Report to compliance team at every friday.
+  - Version info of java, git, Jenkins nginx, Docker/Kubernats, Ansible etc...
+* Find log file between two date.
+* Monitoring application(s) or tool(s) File system usage.
+  - Monitoring xyz log directory and if any log are not generating in last 24 hours then trigger a mail.
+  - Monitor micro services and send automatic mail alerts when application are down.
+  - Monitor Jenkins and send automatic email alert when application is down.
+  - Monitoring file system usage and send automatics email alerts when your file system usage is more than threshold let say 90%
+  -  
+
+
 
 There are different type of shell:
 * Bash (Most commonly used type. That why now people call this Bash scripting in the place of shell scripting)
@@ -13,7 +30,7 @@ There are different type of shell:
 
 When we use mac then we got default zsh shell, but most commonly in linux are bash shell.
 
-You can check using echo $0
+You can check using echo $0, echo $SHELL
 [cloud_user@888ed763a51c shayash]$ echo $0
 -bash
 
@@ -117,6 +134,50 @@ checking comments
 
 What are variable?
 To store a value and use it again and again whenever needed.
+Better use "" for variable, which is good practice.
+When ever we are using variable, we need to use $ sign.
+If you use the same varialbe again then it value will change with last one bofore that command run.
+
+
+VAR_NAME=value
+VAR_NAME=$(hostname)
+echo $VAR_NAME
+
+
+[cloud_user@888ed763a51c myscripts]$ cat 03_vardemo.sh 
+#!/bin/bash
+#Script to show how to use variables.
+a=10
+name="Prashant"
+age=28
+echo "My name is $name and age is $age"
+name="Shayash"
+echo "My name is $name"
+#var to store the output of a command
+HOSTNAME=$(hostname)
+echo "Name of this machine is $HOSTNAME"
+[cloud_user@888ed763a51c myscripts]$ ./03_vardemo.sh 
+My name is Prashant and age is 28
+My name is Shayash
+Name of this machine is 888ed763a51c.mylabserver.com
+
+
+To check the machine name:hostname
+[cloud_user@888ed763a51c myscripts]$ hostname
+888ed763a51c.mylabserver.com
+
+Constant Variable? 
+Once you defined a variable and don't wanna change it until end of the script. Just need to write only before the variable.
+
+#!/bin/bash
+
+
+
+
+
+
+
+
 
 
 
