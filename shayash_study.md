@@ -1,13 +1,11 @@
-# 28-07-2025
-
-What is Lunux Shell?
+# What is Lunux Shell?
 A shell provide an environment to a user to execute commands and interact with Kernal.
 Shell Script is a sequence of commands pasted in a text file.
 
-Why need to develop shell script?
+# Why need to develop shell script?
 To automate repetitive task in our Unix/Linux Environment.
 
-Example of use case of shell scripting:
+# Example of use case of shell scripting:
 * Send some devops tools versions Report to compliance team at every friday.
   - Version info of java, git, Jenkins nginx, Docker/Kubernats, Ansible etc...
 * Find log file between two date.
@@ -16,18 +14,14 @@ Example of use case of shell scripting:
   - Monitor micro services and send automatic mail alerts when application are down.
   - Monitor Jenkins and send automatic email alert when application is down.
   - Monitoring file system usage and send automatics email alerts when your file system usage is more than threshold let say 90%
-  -  
 
-
-
-There are different type of shell:
+# There are different type of shell:
 * Bash (Most commonly used type. That why now people call this Bash scripting in the place of shell scripting)
 * sh (Old Version)
 * ksh
 * tsh
 * fish
 * zsh (Extended version of Bash Shell, more advanced)
-
 When we use mac then we got default zsh shell, but most commonly in linux are bash shell.
 
 You can check using echo $0, echo $SHELL
@@ -66,11 +60,20 @@ To check what are the other shell are present in your system: cat /etc/shells
 /usr/bin/sh
 /usr/bin/bash
 
-What is Shell Scripting?
+# What is Shell Scripting?
 *Shell script consist of set of commands to perform a task.
 *All the command execute sequentially.
 *Some task like file manipulation, Program execution, user interaction, automation of task etc can be done.
 
+# Basic Steps to develop/ Write And Execute Bash Shell Scripting
+* Step 1: Get Requirement & it's required command.
+* Step 2: Choose shell type (in our case bash) and find the location of shell: which bash
+* Step 3: Open file using vi/vim editors (ex: vi firstScript.sh) on your Linux/unix/mac os.
+  - Note: .sh extension is not mediatory.
+* Step 4: Write Shebang line (#!/bin/bash) as a very first line in script.
+
+# Check the bash complete path
+$which bash
 
 First Basic Script...
 
@@ -83,7 +86,7 @@ Ouptput:
 [cloud_user@888ed763a51c myscripts]$ ./01_basic.sh 
 Hey buddy
 
-What is Shebang?
+# What is Shebang?
 #!/bin/bash : Here we use to solve the capatability problem, this allow to use bash scripting use this if bash is not default one in that perticular os.
 Better to follow the standard.
 
@@ -91,7 +94,7 @@ Better to follow the standard.
 echo "Hey buddy" .... Here echo means ending output to the terminal. 
 
 
-How to run the script:
+# How to run the script:
 *Make sure script has execute permission rwx
 
 *Run using:
@@ -132,7 +135,7 @@ comment
 checking comments
 
 
-What are variable?
+# What are variable?
 To store a value and use it again and again whenever needed.
 Better use "" for variable, which is good practice.
 When ever we are using variable, we need to use $ sign.
@@ -166,7 +169,7 @@ To check the machine name:hostname
 [cloud_user@888ed763a51c myscripts]$ hostname
 888ed763a51c.mylabserver.com
 
-Constant Variable? 
+# Constant Variable? 
 Once you defined a variable and don't wanna change it until end of the script. Just need to write only before the variable.
 
 #!/bin/bash
